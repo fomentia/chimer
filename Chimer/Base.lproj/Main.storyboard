@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,106 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUb-hv-nKG" userLabel="Black View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="311"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAc-xI-CNm">
+                                        <rect key="frame" x="148" y="93" width="304" height="126"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="93"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="IAc-xI-CNm" firstAttribute="centerX" secondItem="BUb-hv-nKG" secondAttribute="centerX" id="AwD-9t-mHg"/>
+                                    <constraint firstItem="IAc-xI-CNm" firstAttribute="centerY" secondItem="BUb-hv-nKG" secondAttribute="centerY" id="GwM-xv-C5T"/>
+                                    <constraint firstAttribute="height" constant="311" id="P7R-DF-OL0"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="59n-1O-1lU" appends="YES" id="Ydz-2u-W9X"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7H-p2-pkH" userLabel="White View">
+                                <rect key="frame" x="0.0" y="310" width="600" height="290"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-mY-WdW">
+                                        <rect key="frame" x="148" y="82" width="304" height="126"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="93"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUC-zf-Ki9">
+                                        <rect key="frame" x="8" y="0.0" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="P81-3V-GaM"/>
+                                        </constraints>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetTimers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HCZ-6Q-wC2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31C-bR-zIV">
+                                        <rect key="frame" x="535" y="0.0" width="57" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="57" id="jMT-Zu-3b0"/>
+                                        </constraints>
+                                        <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="pauseTimers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mon-ZR-Xmo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="MWh-mY-WdW" firstAttribute="centerY" secondItem="p7H-p2-pkH" secondAttribute="centerY" id="FK4-aW-L7q"/>
+                                    <constraint firstItem="MWh-mY-WdW" firstAttribute="centerX" secondItem="p7H-p2-pkH" secondAttribute="centerX" id="NcU-GE-PXr"/>
+                                    <constraint firstItem="rUC-zf-Ki9" firstAttribute="leading" secondItem="p7H-p2-pkH" secondAttribute="leading" constant="8" id="Zlp-SN-IQg"/>
+                                    <constraint firstAttribute="trailing" secondItem="31C-bR-zIV" secondAttribute="trailing" constant="8" id="wC0-mq-hgs"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rF2-le-vvv" appends="YES" id="hZx-78-nwT"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rUC-zf-Ki9" firstAttribute="top" secondItem="BUb-hv-nKG" secondAttribute="bottom" constant="-1" id="ART-My-iVc"/>
+                            <constraint firstItem="BUb-hv-nKG" firstAttribute="leading" secondItem="p7H-p2-pkH" secondAttribute="trailing" constant="-600" id="MTM-4c-had"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p7H-p2-pkH" secondAttribute="trailing" constant="-20" id="RhD-pf-g6I"/>
+                            <constraint firstItem="p7H-p2-pkH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tc7-oT-AjW"/>
+                            <constraint firstItem="p7H-p2-pkH" firstAttribute="top" secondItem="BUb-hv-nKG" secondAttribute="bottom" constant="-1" id="WPa-2M-xrq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BUb-hv-nKG" secondAttribute="trailing" constant="-20" id="bNB-iS-0jb"/>
+                            <constraint firstItem="BUb-hv-nKG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="bQ6-FS-bN5"/>
+                            <constraint firstItem="BUb-hv-nKG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="bhu-C5-b2O"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p7H-p2-pkH" secondAttribute="bottom" id="eQR-Lj-FUI"/>
+                            <constraint firstItem="p7H-p2-pkH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gsI-xi-QUD"/>
+                            <constraint firstItem="31C-bR-zIV" firstAttribute="top" secondItem="BUb-hv-nKG" secondAttribute="bottom" constant="-1" id="tMx-Hi-TLs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blackTimerLabel" destination="IAc-xI-CNm" id="Js7-ga-M1X"/>
+                        <outlet property="blackView" destination="BUb-hv-nKG" id="E3C-O2-cB8"/>
+                        <outlet property="blackViewHeightConstraint" destination="P7R-DF-OL0" id="oXB-CT-YGy"/>
+                        <outlet property="whiteTimerLabel" destination="MWh-mY-WdW" id="s1K-dB-dDp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rF2-le-vvv" userLabel="White View Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="switchWhiteTimer:" destination="BYZ-38-t0r" id="haH-9g-Ic9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="59n-1O-1lU" userLabel="Black View Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="switchBlackTimer:" destination="BYZ-38-t0r" id="4vy-Jo-DBe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="481" y="630"/>
         </scene>
     </scenes>
 </document>

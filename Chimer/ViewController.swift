@@ -9,17 +9,97 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var blackViewHeightConstraint: NSLayoutConstraint!
+
+    @IBOutlet var whiteTimerLabel: UILabel!
+    @IBOutlet var blackTimerLabel: UILabel!
+
+    @IBOutlet var blackView: UIView!
+
+    var whiteTimer: NSTimer!
+    var blackTimer: NSTimer!
+    
+    var whiteTime: Int = 1800
+    var blackTime: Int = 1800
+    
+    var activeTimer: NSTimer!
+    var timerWhenPaused: NSTimer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        blackViewHeightConstraint.constant = self.view.frame.height / 2
+
+        whiteTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateWhiteTimer"), userInfo: nil, repeats: true)
+        blackTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateBlackTimer"), userInfo: nil, repeats: true)
+        activeTimer = whiteTimer
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func updateWhiteTimer() {
+        if let at = activeTimer {
+            if at == whiteTimer {
+                whiteTime -= 1
+                updateWhiteLabel()
+            }
+        }
     }
 
+    func updateBlackTimer() {
+        if let at = activeTimer {
+            if at == blackTimer {
+                blackTime -= 1
+                updateBlackLabel()
+            }
+        }
+    }
+    
+    func updateWhiteLabel() {
+        let minutes = Int(whiteTime / 60)
+        let seconds = whiteTime - (minutes * 60)
+        if seconds == 0 {
+            whiteTimerLabel.text = "\(minutes):00"
+        } else {
+            whiteTimerLabel.text = "\(minutes):\(seconds)"
+        }
+    }
+    
+    func updateBlackLabel() {
+        let minutes = Int(blackTime / 60)
+        let seconds = blackTime - (minutes * 60)
+        if seconds == 0 {
+            blackTimerLabel.text = "\(minutes):00"
+        } else {
+            blackTimerLabel.text = "\(minutes):\(seconds)"
+        }
+    }
 
+    @IBAction func switchWhiteTimer(sender: UITapGestureRecognizer) {
+        activeTimer = blackTimer
+    }
+    
+    @IBAction func switchBlackTimer(sender: UITapGestureRecognizer) {
+        activeTimer = whiteTimer
+    }
+
+    @IBAction func resetTimers(sender: UIButton) {
+        whiteTime = 1800
+        blackTime = 1800
+        
+        updateWhiteLabel()
+        updateBlackLabel()
+        
+        timerWhenPaused = whiteTimer
+    }
+
+    @IBAction func pauseTimers(sender: UIButton) {
+        if sender.titleLabel!.text == "Pause" {
+            timerWhenPaused = activeTimer
+            activeTimer = nil
+            sender.setTitle("Resume", forState: .Normal)
+        } else {
+            activeTimer = timerWhenPaused
+            sender.setTitle("Pause", forState: .Normal)
+        }
+    }
 }
 
