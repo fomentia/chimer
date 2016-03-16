@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         blackViewHeightConstraint.constant = self.view.frame.height / 2
+        blackTimerLabel.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
 
         whiteTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateWhiteTimer"), userInfo: nil, repeats: true)
         blackTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateBlackTimer"), userInfo: nil, repeats: true)
