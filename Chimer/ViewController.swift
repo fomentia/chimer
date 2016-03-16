@@ -35,6 +35,11 @@ class ViewController: UIViewController {
         blackTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateBlackTimer"), userInfo: nil, repeats: true)
         activeTimer = whiteTimer
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        updateWhiteLabel()
+        updateBlackLabel()
+    }
 
     func updateWhiteTimer() {
         if let at = activeTimer {
@@ -101,6 +106,12 @@ class ViewController: UIViewController {
             activeTimer = timerWhenPaused
             sender.setTitle("Pause", forState: .Normal)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let nav = segue.destinationViewController as! UINavigationController
+        let dvc = nav.topViewController as! SettingsController
+        dvc.parent = self
     }
 }
 

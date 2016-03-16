@@ -12,6 +12,7 @@
 		FD0246AD1C9876A100F2C3D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0246AB1C9876A100F2C3D0 /* Main.storyboard */; };
 		FD0246AF1C9876A100F2C3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0246AE1C9876A100F2C3D0 /* Assets.xcassets */; };
 		FD0246B21C9876A100F2C3D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0246B01C9876A100F2C3D0 /* LaunchScreen.storyboard */; };
+		FDBB8E071C9A000A0046AF35 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB8E061C9A000A0046AF35 /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FD0246AE1C9876A100F2C3D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD0246B11C9876A100F2C3D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD0246B31C9876A100F2C3D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDBB8E061C9A000A0046AF35 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				FD0246A71C9876A100F2C3D0 /* AppDelegate.swift */,
 				FD0246A91C9876A100F2C3D0 /* ViewController.swift */,
+				FDBB8E061C9A000A0046AF35 /* SettingsController.swift */,
 				FD0246AB1C9876A100F2C3D0 /* Main.storyboard */,
 				FD0246AE1C9876A100F2C3D0 /* Assets.xcassets */,
 				FD0246B01C9876A100F2C3D0 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDBB8E071C9A000A0046AF35 /* SettingsController.swift in Sources */,
 				FD0246AA1C9876A100F2C3D0 /* ViewController.swift in Sources */,
 				FD0246A81C9876A100F2C3D0 /* AppDelegate.swift in Sources */,
 			);
@@ -285,6 +289,7 @@
 				FD0246B81C9876A100F2C3D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

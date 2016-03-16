@@ -87,10 +87,19 @@
                                     <outletCollection property="gestureRecognizers" destination="rF2-le-vvv" appends="YES" id="hZx-78-nwT"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUM-CJ-97z">
+                                <rect key="frame" x="272" y="310" width="57" height="30"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="beB-q8-den" kind="presentation" id="Fi3-sp-vVQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dUM-CJ-97z" firstAttribute="centerX" secondItem="p7H-p2-pkH" secondAttribute="centerX" id="42D-Ta-KW7"/>
                             <constraint firstItem="rUC-zf-Ki9" firstAttribute="top" secondItem="BUb-hv-nKG" secondAttribute="bottom" constant="-1" id="ART-My-iVc"/>
+                            <constraint firstItem="dUM-CJ-97z" firstAttribute="top" secondItem="BUb-hv-nKG" secondAttribute="bottom" constant="-1" id="JNQ-Ri-sPC"/>
                             <constraint firstItem="BUb-hv-nKG" firstAttribute="leading" secondItem="p7H-p2-pkH" secondAttribute="trailing" constant="-600" id="MTM-4c-had"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p7H-p2-pkH" secondAttribute="trailing" constant="-20" id="RhD-pf-g6I"/>
                             <constraint firstItem="p7H-p2-pkH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tc7-oT-AjW"/>
@@ -123,6 +132,83 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="481" y="630"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="p7F-yR-VKb">
+            <objects>
+                <viewController id="gwV-uy-Zgt" customClass="SettingsController" customModule="Chimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uo7-f4-gze"/>
+                        <viewControllerLayoutGuide type="bottom" id="MWk-cg-OoA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i8X-84-T1r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iec-uo-lXZ">
+                                <rect key="frame" x="24" y="72" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="5" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="CNC-HD-m6e">
+                                <rect key="frame" x="22" y="101" width="560" height="31"/>
+                                <connections>
+                                    <action selector="timeLimitChanged:" destination="gwV-uy-Zgt" eventType="valueChanged" id="zLa-PT-mxI"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 min." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leb-Yg-p8Y">
+                                <rect key="frame" x="522" y="72" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CNC-HD-m6e" firstAttribute="leading" secondItem="i8X-84-T1r" secondAttribute="leadingMargin" constant="4" id="1Nu-eg-VbX"/>
+                            <constraint firstItem="iec-uo-lXZ" firstAttribute="leading" secondItem="i8X-84-T1r" secondAttribute="leadingMargin" constant="4" id="1Pf-Ve-5Z0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Leb-Yg-p8Y" secondAttribute="trailing" id="2Sl-bj-0eU"/>
+                            <constraint firstItem="CNC-HD-m6e" firstAttribute="top" secondItem="Leb-Yg-p8Y" secondAttribute="bottom" constant="8" id="a2J-hd-nPJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CNC-HD-m6e" secondAttribute="trailing" id="bI3-7W-Y1p"/>
+                            <constraint firstItem="Leb-Yg-p8Y" firstAttribute="top" secondItem="Uo7-f4-gze" secondAttribute="bottom" constant="8" id="esb-JH-tgt"/>
+                            <constraint firstItem="CNC-HD-m6e" firstAttribute="top" secondItem="iec-uo-lXZ" secondAttribute="bottom" constant="8" id="hVw-eD-g4v"/>
+                            <constraint firstItem="iec-uo-lXZ" firstAttribute="top" secondItem="Uo7-f4-gze" secondAttribute="bottom" constant="8" id="mzA-uS-X5w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="3eC-ak-Ixf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="s7O-LB-lMZ">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="gwV-uy-Zgt" id="tkS-9C-2tX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timeLabel" destination="Leb-Yg-p8Y" id="EYi-0H-wJP"/>
+                        <outlet property="timeSlider" destination="CNC-HD-m6e" id="8Um-Ah-Vea"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o21-MP-hgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826" y="630"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OLb-uY-Kuh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uqw-xz-hCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="beB-q8-den" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d1j-EA-2GN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gwV-uy-Zgt" kind="relationship" relationship="rootViewController" id="Oui-Jx-5Q7"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1153" y="630"/>
         </scene>
     </scenes>
 </document>
