@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var blackTimerLabel: UILabel!
 
     @IBOutlet var blackView: UIView!
+    @IBOutlet var whiteView: UIView!
 
     var whiteTimer: NSTimer!
     var blackTimer: NSTimer!
@@ -99,10 +100,14 @@ class ViewController: UIViewController {
 
     @IBAction func pauseTimers(sender: UIButton) {
         if sender.titleLabel!.text == "Pause" {
+            blackView.gestureRecognizers![0].enabled = false
+            whiteView.gestureRecognizers![0].enabled = false
             timerWhenPaused = activeTimer
             activeTimer = nil
             sender.setTitle("Resume", forState: .Normal)
         } else {
+            blackView.gestureRecognizers![0].enabled = true
+            whiteView.gestureRecognizers![0].enabled = true
             activeTimer = timerWhenPaused
             sender.setTitle("Pause", forState: .Normal)
         }

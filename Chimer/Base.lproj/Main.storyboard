@@ -117,6 +117,7 @@
                         <outlet property="blackView" destination="BUb-hv-nKG" id="E3C-O2-cB8"/>
                         <outlet property="blackViewHeightConstraint" destination="P7R-DF-OL0" id="oXB-CT-YGy"/>
                         <outlet property="whiteTimerLabel" destination="MWh-mY-WdW" id="s1K-dB-dDp"/>
+                        <outlet property="whiteView" destination="p7H-p2-pkH" id="WPj-UU-NPf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -195,7 +196,6 @@
         <!--Navigation Controller-->
         <scene sceneID="OLb-uY-Kuh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uqw-xz-hCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="beB-q8-den" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d1j-EA-2GN">
@@ -207,6 +207,7 @@
                         <segue destination="gwV-uy-Zgt" kind="relationship" relationship="rootViewController" id="Oui-Jx-5Q7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uqw-xz-hCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1153" y="630"/>
         </scene>
