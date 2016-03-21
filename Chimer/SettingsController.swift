@@ -28,8 +28,10 @@ class SettingsController: UIViewController {
     }
 
     @IBAction func doneButtonPressed(sender: UIBarButtonItem) {
-        parent.blackTime = minutes * 60
-        parent.whiteTime = minutes * 60
+        if minutes != nil {
+            parent.blackTime = minutes * 60
+            parent.whiteTime = minutes * 60
+        }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
